@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-color-primary="#E8590C" data-color-dark="#1A1A1A" data-color-cream="#FFF7ED" data-color-light="#FFFFFF" data-color-secondary="#A8A29E">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Caffeiné</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Caffeiné - Return to homepage">Caffeiné</a>
+            <nav class="site-nav">
+                <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="menu-toggle-bar" aria-hidden="true"></span>
+                    <span class="menu-toggle-bar" aria-hidden="true"></span>
+                    <span class="menu-toggle-bar" aria-hidden="true"></span>
+                    <span class="menu-toggle-text" aria-hidden="true">Menu</span>
+                </button>
+                <ul id="primary-navigation" class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Let's Talk Coffee</h1>
+                    <p class="hero-subtitle">Have a question, a special request, or want to share your favorite coffee moment? We'd love to hear from you. Drop us a message and we'll get back as soon as we can.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <h2 class="section-title">Visit Us</h2>
+
+                        <div class="contact-location" data-config="location">
+                            <p class="location-name" data-config="business-name">[Café Name]</p>
+                            <address class="location-address" data-config="address">
+                                [Street Address]<br>
+                                [City, State ZIP]
+                            </address>
+                        </div>
+
+                        <div class="contact-hours" data-config="hours">
+                            <h3 class="contact-subheading">Opening Hours</h3>
+                            <dl class="hours-list">
+                                <div class="hours-row">
+                                    <dt>Monday – Friday</dt>
+                                    <dd data-config="hours-weekday">[Opening hours]</dd>
+                                </div>
+                                <div class="hours-row">
+                                    <dt>Saturday – Sunday</dt>
+                                    <dd data-config="hours-weekend">[Opening hours]</dd>
+                                </div>
+                            </dl>
+                        </div>
+
+                        <div class="contact-social" data-config="social">
+                            <h3 class="contact-subheading">Connect</h3>
+                            <ul class="social-list">
+                                <li><a href="#" class="social-link" data-config="social-facebook" aria-label="Facebook (placeholder)">Facebook</a></li>
+                                <li><a href="#" class="social-link" data-config="social-instagram" aria-label="Instagram (placeholder)">Instagram</a></li>
+                                <li><a href="#" class="social-link" data-config="social-twitter" aria-label="Twitter (placeholder)">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <h2 class="section-title">Send a Message</h2>
+
+                        <div class="form-status" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="form-error" id="form-error-message" hidden>
+                                <p id="form-error-text"></p>
+                            </div>
+                            <div class="form-success" id="form-success-message" hidden>
+                                <p id="form-success-text"></p>
+                            </div>
+                        </div>
+
+                        <form class="contact-form" id="contact-form" action="#" method="POST" novalidate>
+                            <p class="form-note">This contact form is a demonstration. Configure a backend endpoint in the form <code>action</code> attribute and implement submission logic in <code>js/contact.js</code> to enable real submissions.</p>
+
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    Name <span class="required-indicator" aria-label="required">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" class="form-input" required minlength="2" aria-describedby="name-error" aria-required="true">
+                                <p id="name-error" class="form-error-text" role="alert" aria-live="polite" hidden></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    Email <span class="required-indicator" aria-label="required">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error" aria-required="true">
+                                <p id="email-error" class="form-error-text" role="alert" aria-live="polite" hidden></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">
+                                    Subject <span class="required-indicator" aria-label="required">*</span>
+                                </label>
+                                <input type="text" id="subject" name="subject" class="form-input" required minlength="3" aria-describedby="subject-error" aria-required="true">
+                                <p id="subject-error" class="form-error-text" role="alert" aria-live="polite" hidden></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">
+                                    Message <span class="required-indicator" aria-label="required">*</span>
+                                </label>
+                                <textarea id="message" name="message" class="form-textarea" required minlength="10" aria-describedby="message-error" aria-required="true"></textarea>
+                                <p id="message-error" class="form-error-text" role="alert" aria-live="polite" hidden></p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-map">
+            <div class="container">
+                <h2 class="section-title">Find Us</h2>
+                <div class="map-wrapper" data-config="map">
+                    <iframe
+                        class="map-embed"
+                        data-map-src="[CONFIGURE_GOOGLE_MAPS_EMBED_URL]"
+                        title="Map placeholder — configure data-map-src with a Google Maps embed URL to display the café location"
+                        src="https://maps.google.com/maps?q=placeholder+location&amp;z=15&amp;output=embed"
+                        width="100%"
+                        height="400"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        aria-label="Map placeholder — configure a real Google Maps embed URL"
+                    >
+                        <p>Your browser does not support embedded maps. Configure a Google Maps embed URL in the <code>data-map-src</code> attribute to display the café location.</p>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-branding">
+                    <p class="footer-logo">Caffeiné</p>
+                </div>
+                <div class="footer-info">
+                    <p class="footer-business-name" data-config="business-name">[Business Name]</p>
+                    <p class="footer-address" data-config="address">[Business Address]</p>
+                    <p class="footer-phone" data-config="phone">[Business Phone]</p>
+                    <p class="footer-email" data-config="email">[Business Email]</p>
+                </div>
+                <div class="footer-hours">
+                    <p class="footer-hours-label" data-config="hours">Business Hours</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Caffeiné. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/contact.js" defer></script>
+</body>
+</html>

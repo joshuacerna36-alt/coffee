@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-color-primary="#E8590C" data-color-dark="#1A1A1A" data-color-cream="#FFF7ED" data-color-light="#FFFFFF" data-color-secondary="#A8A29E">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Caffeiné</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Caffeiné - Return to homepage">Caffeiné</a>
+            <nav class="site-nav">
+                <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="menu-toggle-bar" aria-hidden="true"></span>
+                    <span class="menu-toggle-bar" aria-hidden="true"></span>
+                    <span class="menu-toggle-bar" aria-hidden="true"></span>
+                    <span class="menu-toggle-text" aria-hidden="true">Menu</span>
+                </button>
+                <ul id="primary-navigation" class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="gallery-root"></main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-branding">
+                    <p class="footer-logo">Caffeiné</p>
+                </div>
+                <div class="footer-info">
+                    <p class="footer-business-name" data-config="business-name">Business Name</p>
+                    <p class="footer-address" data-config="address">Business Address</p>
+                    <p class="footer-phone" data-config="phone">Business Phone</p>
+                    <p class="footer-email" data-config="email">Business Email</p>
+                </div>
+                <div class="footer-hours">
+                    <p class="footer-hours-label" data-config="hours">Business Hours</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Caffeiné. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+</body>
+</html>

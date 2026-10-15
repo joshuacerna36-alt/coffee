@@ -13,13 +13,17 @@ caffeine-website/
 ├── menu.html               # Full menu with search & filter
 ├── gallery.html            # Photo gallery with lightbox
 ├── contact.html            # Contact form (demonstration)
+├── login.html              # Login page (demo auth, admin/client roles)
+├── admin.html              # Admin dashboard (requires auth: admin)
+├── client.html             # Client dashboard (requires auth: client)
 ├── css/
-│   └── style.css           # All styles (1,593 lines)
+│   └── style.css           # All styles (1,603 lines)
 ├── js/
 │   ├── main.js             # Mobile menu toggle, year display
 │   ├── menu.js             # Menu search, category filters, product modal
 │   ├── gallery.js          # Dynamic gallery markup + lightbox
-│   └── contact.js          # Contact form validation (demonstration)
+│   ├── contact.js          # Contact form validation (demonstration)
+│   └── login.js            # Login/auth: validation, mock session, role guards
 └── assets/
     ├── images/
     │   ├── branding/       # Empty — add logo files here
@@ -161,6 +165,19 @@ Replace the bracketed placeholders:
 
 ## Features
 
+### Authentication (Login System)
+The site includes a client-side demonstration login system with role-based access:
+
+- **Login page** (`login.html`) — Form with email, password, and role selector (admin/client). Any email and password (min. 6 characters) will authenticate.
+- **Admin dashboard** (`admin.html`) — Protected page; requires `admin` role. Shows order, menu, and gallery management placeholders.
+- **Client dashboard** (`client.html`) — Protected page; requires `client` role. Shows order history, preferences, and favorites placeholders.
+- **Session storage** — Auth state is stored in `localStorage` under key `caffiene_auth` with `{ role, email, loggedIn }` structure.
+- **Route guards** — Dashboard pages use `<body data-requires-auth="admin">` (or `"client"`) to enforce role-based access via `js/login.js`.
+- **Redirect logic** — Already-logged-in users visiting `login.html` are redirected to their dashboard. Unauthenticated users visiting dashboard pages are redirected to `login.html`.
+- **Logout** — `window.caffieneAuth.logout()` clears storage and redirects to login.
+
+> **Note:** This is a client-side mock — no real authentication, password hashing, or server-side validation. Replace with a real backend for production use.
+
 ### Working Features
 - **Responsive mobile navigation** — `js/main.js` toggles the mobile menu with backdrop, focus management, and Escape-to-close
 - **Current year display** — `js/main.js` auto-populates the copyright year
@@ -177,6 +194,7 @@ Replace the bracketed placeholders:
 | Gallery lightbox | `gallery.html` + `js/gallery.js` | Uses product images as gallery content. Add real gallery photos to `assets/images/gallery/` and update `GALLERY_DATA` in `js/gallery.js` to display them. |
 | Footer config | All pages | Uses `data-config` attributes with placeholder text. `js/main.js` does not yet populate these dynamically. |
 | Product modal images | `menu.html` | Modal displays product images and details; uses the same product images from `assets/images/products/`. |
+| Login system | `login.html`, `admin.html`, `client.html` + `js/login.js` | Mock authentication with role-based routing (admin/client). Any credentials accepted. Stores session in `localStorage`. Replace with real backend for production. |
 
 ### Not Implemented
 - **Theme toggle** — No theme toggle button exists in the HTML. The `data-color-*` attributes on the `<html>` tag suggest this was planned but never built. The site is dark-themed only.
@@ -202,13 +220,14 @@ The stylesheet (`css/style.css`) is organized in this order:
 13. Gallery preview + lightbox
 14. Testimonials
 15. Forms (form controls, validation helpers, contact page layout)
-16. Modal (product modal + lightbox share the pattern)
-17. Footer
-18. Social links
-19. Responsive breakpoints (tablet, laptop, desktop, mobile landscape)
-20. Reduced motion
-21. Selection styles
-22. Print styles
+16. Login & dashboard pages
+17. Modal (product modal + lightbox share the pattern)
+18. Footer
+19. Social links
+20. Responsive breakpoints (tablet, laptop, desktop, mobile landscape)
+21. Reduced motion
+22. Selection styles
+23. Print styles
 
 ---
 

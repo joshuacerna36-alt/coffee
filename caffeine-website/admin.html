@@ -41,7 +41,7 @@
 
         <section class="admin-section">
             <div class="container">
-                <div class="admin-controls">
+                        <div class="dashboard-controls">
                     <button class="btn btn-outline" id="logout-btn" type="button">Log Out</button>
                 </div>
 
@@ -87,25 +87,5 @@
 
     <script src="js/main.js" defer></script>
     <script src="js/login.js" defer></script>
-    <script>
-        (function () {
-            'use strict';
-            var auth = window.caffieneAuth;
-            if (auth && typeof auth.checkAuth === 'function') {
-                var session = auth.checkAuth();
-                if (!session.isLoggedIn || session.role !== 'admin') {
-                    window.location.href = 'login.html';
-                }
-            } else {
-                window.location.href = 'login.html';
-            }
-            var logoutBtn = document.getElementById('logout-btn');
-            if (logoutBtn && auth && typeof auth.logout === 'function') {
-                logoutBtn.addEventListener('click', function () {
-                    auth.logout();
-                });
-            }
-        })();
-    </script>
 </body>
 </html>

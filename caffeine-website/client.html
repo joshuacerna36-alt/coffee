@@ -6,7 +6,7 @@
     <title>Client Dashboard | Caffeiné</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-requires-auth="client">
     <header class="site-header">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Caffeiné - Return to homepage">Caffeiné</a>
@@ -87,25 +87,5 @@
 
     <script src="js/main.js" defer></script>
     <script src="js/login.js" defer></script>
-    <script>
-        (function () {
-            'use strict';
-            var auth = window.caffieneAuth;
-            if (auth && typeof auth.checkAuth === 'function') {
-                var session = auth.checkAuth();
-                if (!session.isLoggedIn || session.role !== 'client') {
-                    window.location.href = 'login.html';
-                }
-            } else {
-                window.location.href = 'login.html';
-            }
-            var logoutBtn = document.getElementById('logout-btn');
-            if (logoutBtn && auth && typeof auth.logout === 'function') {
-                logoutBtn.addEventListener('click', function () {
-                    auth.logout();
-                });
-            }
-        })();
-    </script>
 </body>
 </html>
